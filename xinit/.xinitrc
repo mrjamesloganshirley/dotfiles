@@ -12,9 +12,10 @@ xrdb -merge ~/.Xresources
 xscreensaver -no-splash &
 dunst &
 
-feh --bg-center ~/Pictures/Backgrounds/wallup-138896.jpg
-
 xsetroot -cursor_name left_ptr &
 
 sxhkd &
+BG_IMAGE=`ls ~/Pictures/Backgrounds/ | shuf -n 1`
+feh --bg-center ~/Pictures/Backgrounds/$BG_IMAGE
+
 exec bspwm

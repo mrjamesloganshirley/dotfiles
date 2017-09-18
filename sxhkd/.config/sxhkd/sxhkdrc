@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + space
-	rofi -show drun
+	rofi -show drun -sidebar-mode -modi "drun,window,ssh" -matching fuzzy
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -16,10 +16,10 @@ super + Escape
 
 # audio volume
 XF86Audio{Raise,Lower}Volume
-	pactl set-sink-mute 0 false ; pactl set-sink-volume 0 {+5%,-5%}
+	pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ {+5%,-5%}
 
 XF86AudioMute
-	pactl set-sink-mute 0 toggle
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 #
 # bspwm hotkeys
@@ -100,13 +100,6 @@ super + {_,shift + }{1-9,0}
 # # Focus the window that was just clicked, and send the click to that window too
 ~button1
 	bspc node pointed -f
-# Window/edge dragging
-super + button{1,3}
-	bspc pointer --grab {move,resize_side}
-super + !button{1-3}
-	bspc pointer -t %i %i
-super + @button{1-3}
-	bspc pointer -u
 
 #
 # preselect
