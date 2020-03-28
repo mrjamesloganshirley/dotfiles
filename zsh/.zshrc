@@ -18,7 +18,7 @@ zstyle ':completion:*' menu select
 # better history search
 # powerline
 autoload -U colors && colors
-. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+. /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
 
 EDITOR=vim
 bindkey -v

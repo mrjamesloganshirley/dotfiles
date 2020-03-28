@@ -6,6 +6,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 export LANG=en_US.UTF-8
+export _JAVA_AWT_WM_NONREPARENTING=1
 xrdb -merge ~/.Xresources
 
 ## some applications that should be run in the background
